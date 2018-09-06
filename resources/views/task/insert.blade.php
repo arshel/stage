@@ -36,14 +36,14 @@
   <br>
   <textarea name="disc" id="" cols="30" rows="10"></textarea>
   <br>
-  <input type="file" name="cover_image"/>
+  <!--<input type="file" name="cover_image"/>-->
     <br>
     <br>
         <input type="submit" class="btn btn-primary btn-lg">
 </form> 
 
     </div>
-</div>
+
 @endsection
     </body>
 </html>

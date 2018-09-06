@@ -23,7 +23,7 @@
 <div class="container">
     <h1>A task</h1>
     
-                    <img style="width: 50%" src="/public/cover_images/{{$task->cover_image}}"></img>
+                    <!--<img style="width: 50%" src="/public/cover_images/{{$task->cover_images}}"></img>-->
 
 <div class="card">
             <div class="row">

@@ -29,7 +29,7 @@
         <div class="col-sm-7">
             
             <div class="card">
-          <div class="card-header bg-dark" style="color:white;">
+          <div class="card-header bg-dark" style="color:white">
        laravel
               </div>
              <div class="card-body">
@@ -41,7 +41,7 @@
           </div>
             </div>
               </div>
-  
+    <hr class="my-4">
   
    @endforeach
      {{$tasks->links()}}

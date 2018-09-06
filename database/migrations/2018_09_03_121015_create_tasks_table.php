@@ -17,7 +17,8 @@ class CreateTasksTable extends Migration
             $table->increments('id');
                $table->integer('user_id');
              $table->text('body');
-             $table->mediumtext('disc');
+                          $table->mediumtext('disc');
+
             //   $table->boolean('complete')->default(false);
             $table->timestamps();
         });
