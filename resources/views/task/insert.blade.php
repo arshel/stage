@@ -32,11 +32,11 @@
 
   <input type="text" name="task" >
   <br>
-  area
+  discription
   <br>
   <textarea name="disc" id="" cols="30" rows="10"></textarea>
   <br>
-  <!--<input type="file" name="cover_image"/>-->
+  <input type="file" name="cover_image"/>
     <br>
     <br>
         <input type="submit" class="btn btn-primary btn-lg">

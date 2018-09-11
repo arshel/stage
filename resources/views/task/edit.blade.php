@@ -22,13 +22,18 @@
   <div class="container">
  <h1>edit task</h1>
   
-        <form class="form-group" action="/task/update/{{$task->id}}" method="post">
+        <form class="form-group" action="/task/update/{{$task->id}}" method="post" enctype="multipart/form-data">
             @csrf
             <p>task</p>
                 <input type="text" name="task" value="{{$task->body}}"/>
-            <p> discription</p>
+          <br>
             <br>
+              <p> discription</p>
            <textarea name="disc" id="" cols="30" rows="10">{{$task->disc}}</textarea>
+           <br>
+           
+             <input type="file" name="cover_image"/>
+           
            <br>
            <br>
         <input value="edit" type="submit"  class="btn btn-primary btn-lg">

@@ -23,7 +23,6 @@
 <div class="container">
     <h1>A task</h1>
     
-                    <!--<img style="width: 50%" src="/public/cover_images/{{$task->cover_images}}"></img>-->
 
 <div class="card">
             <div class="row">
@@ -32,14 +31,16 @@
                     <h3>{{$task->body}}</h3>
                     <p>{{$task->disc}}</p>
                     <small>written on {{$task->created_at}}  </small>
+                  
                 </div>
-                
-            </div>
+                  
+            <!--<img style="width:30%; height:30%" class=" float-right" src="storage/cover_images/test.jpeg" alt="hier moet wat komen !">-->
+       <img style="width:50%" class="img-responsive" src="{{ asset('storage/cover_images/$task->cover_image') }}" alt="hier moet wat komen !">
 
+            </div>
         </div>
         
-        
-   
+   <br>
     @if(Auth::id() == $task->user_id)
    <a href="/task/{{$task->id}}/edit" class="btn btn-primary btn-lg ">edit</a>
 
@@ -52,8 +53,7 @@
 
 
 
-
-
+</div>
 </div>
 @endsection
 </body>

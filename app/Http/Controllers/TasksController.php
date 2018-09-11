@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\task;
+// use App\User;
 use DB;
 class TasksController extends Controller
 {
@@ -37,20 +38,20 @@ class TasksController extends Controller
         // ]);
         
         
-//           if ($request->hasFile('cover_image')) {
-// //get file name with the extentin
-//             $filenamewithExt = $request->file('cover_image')->getClientOriginalName();
-//             // get just filename
-//             $filename = pathinfo($filenamewithExt, PATHINFO_FILENAME);
-//             //get just extention
-//             $extension = $request->file('cover_image')->getClientOriginalExtension();
-// //filename to store
-//             $fileNametostore = $filename . '_' . time() . '.' . $extension;
-//             //upload image
-//             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNametostore);
-//         } else {
-//             $fileNametostore = 'noimage.jpg';
-//         }
+          if ($request->hasFile('cover_image')) {
+//get file name with the extentin
+            $filenamewithExt = $request->file('cover_image')->getClientOriginalName();
+            // get just filename
+            $filename = pathinfo($filenamewithExt, PATHINFO_FILENAME);
+            //get just extention
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+//filename to store
+            $fileNametostore = $filename . '_' . time() . '.' . $extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNametostore);
+        } else {
+            $fileNametostore = 'no_image.jpg';
+        }
 
  
     
@@ -60,6 +61,7 @@ class TasksController extends Controller
         $task->body = $request->task;
         $task->disc = $request->disc;
         $task->user_id = auth()->user()->id;
+        $task->cover_image = $fileNametostore;
 
         $task->save();
      
@@ -70,9 +72,8 @@ class TasksController extends Controller
     
       public function show($id){
         
-    //  $this->middleware('auth');
-// $task = DB::table('tasks')->find($id);
-  $task = Task::find($id);
+
+         $task = Task::find($id);
 
    return view('task.show')->with('task', $task);
     }

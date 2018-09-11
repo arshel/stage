@@ -22,11 +22,10 @@ route::post('/task/update/{id}', 'TasksController@update');
 
 route::get('/task/{id}/destroy', 'TasksController@destroy');
 
-
-
 route::get('/task/{task}', 'TasksController@show');
 
 route::get('/task/{id}/edit', 'TasksController@edit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

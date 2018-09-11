@@ -17,14 +17,20 @@
 @extends('layouts.app')
 
 @section('content')
-
+<!--/blog/resources/views/task/index.blade.php-->
+<!--/blog/storage/app/public/cover_images/pexels-photo-371633_1536233051.jpeg-->
 <div class="container">
     
+  <!--<img style="width:50%" class="img-responsive" src="asset('/task/test.jpeg');" alt="hier moet wat komen ">-->
+       <img style="width:50%" class="img-responsive rounded" src="{{ asset('storage/cover_images/laravel.png') }}" alt="hier moet wat komen !">
+       
+       
     <h1>alle post</h1>
   <ul>
- 
+            
+  @if(count($tasks) > 0)
   @foreach ($tasks as $task)
- 
+
   
         <div class="col-sm-7">
             
@@ -41,10 +47,14 @@
           </div>
             </div>
               </div>
-    <hr class="my-4">
+   <hr class="my-4">
   
    @endforeach
-     {{$tasks->links()}}
+   
+   @else 
+   <p>there are no tasks</p>
+   @endif
+         {{$tasks->links()}}
     </ul>
     <div class="col-md-8 col-sm-4">
     <button class="btn btn-primary btn-lg" type="button" onclick="window.location='{{ url("task/insert") }}'">Create</button>
